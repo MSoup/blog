@@ -5,30 +5,6 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<script>
-  const COLORS = ["#0bf", "#f0b", "#fb0", "#b0f"];
-
-  const getRandomColor = (): string =>
-    COLORS[Math.floor(Math.random() * COLORS.length)];
-
-  const colorizeText = (): void => {
-    const colorfulText = document.querySelector(".colorful");
-    if (!colorfulText) return;
-
-    const text = colorfulText.textContent;
-    if (!text) return;
-
-    const coloredText = text
-      .split("")
-      .map((char) => `<span style="color: ${getRandomColor()}">${char}</span>`)
-      .join("");
-
-    colorfulText.innerHTML = coloredText;
-  };
-
-  colorizeText();
-</script>
-
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -38,15 +14,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <main>
       <h1>🧑‍🚀 Hi again!</h1>
       <p>Why again?</p>
-      <p>
-        Because this is my <i>some_humorous_number</i> attempt at building a blog.
-      </p>
+      <p>Because this is my 12th attempt at building a blog.</p>
       <p>
         I'm Dave, a Software Engineer that has gone off the deep end with AWS,
         cloud, and security. Sometimes you will see me in the arcades of various
-        Tokyo districts, stomping away at <span class="colorful"
-          >flying colored arrows</span
-        >
+        Tokyo districts, stomping away at <span>
+          <span style="color: #0bf">f</span><span style="color: #f0b">l</span
+          ><span style="color: #fb0">y</span><span style="color: #b0f">i</span
+          ><span style="color: #0bf">n</span><span style="color: #f0b">g</span>
+          <span style="color: #b0f">c</span><span style="color: #0bf">o</span
+          ><span style="color: #f0b">l</span><span style="color: #fb0">o</span
+          ><span style="color: #b0f">r</span><span style="color: #0bf">e</span
+          ><span style="color: #f0b">d</span>
+          <span style="color: #b0f">a</span><span style="color: #0bf">r</span
+          ><span style="color: #f0b">r</span><span style="color: #fb0">o</span
+          ><span style="color: #b0f">w</span><span style="color: #0bf">s</span>
+        </span>
         (Dance Dance Revolution reference), or pondering my life decisions as I try
         to make sense of Jenkins.
       </p>

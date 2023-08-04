@@ -120,7 +120,7 @@ You absolutely must export the parent certificate.
 
 ### Example
 
-![cert viewer](/assets/cert-viewer.png)
+![cert viewer](../../../assets/images/cert-viewer.png)
 In the above image, .github.com is highlighted, this is the wrong certificate.
 Verify that you have successfully exported the certificate:
 
