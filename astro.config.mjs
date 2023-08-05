@@ -8,6 +8,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
-  site: "https://msoup.github.io/blog/",
+  site: "http://http://143.198.144.49/",
   integrations: [mdx(), sitemap()],
 });

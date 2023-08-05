@@ -58,4 +58,3 @@ jobs:
           source: ${{ env.BUILD_PATH }}/dist/*
           target: /data/www/alpha
           strip_components: 1
-
