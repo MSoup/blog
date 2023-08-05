@@ -8,6 +8,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
-  site: "http://http://143.198.144.49/",
+  site: "http://143.198.144.49",
   integrations: [mdx(), sitemap()],
 });
