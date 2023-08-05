@@ -72,6 +72,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
+          name: dist_artifact
           path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
@@ -82,6 +83,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - uses: actions/download-artifact@v3
+        with:
+          name: dist_artifact
+      - name: Display structure of downloaded files
+        run: ls -R
