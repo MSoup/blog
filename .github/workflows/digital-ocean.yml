@@ -1,5 +1,7 @@
 name: scp files
 on: [push]
+env:
+  BUILD_PATH: "."
 jobs:
   build:
     name: Build
