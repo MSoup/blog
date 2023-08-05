@@ -58,7 +58,9 @@ jobs:
         with:
           name: dist_artifact
       - name: Display structure of downloaded files
-        run: ls -R
+        run: |
+          tar -xf artifact.tar
+          ls -R
 
   # deploy:
   #   runs-on: ubuntu-latest
