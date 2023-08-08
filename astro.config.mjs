@@ -8,6 +8,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
-  site: "http://143.198.144.49",
+  site: "https://www.cloudsoup.net",
   integrations: [mdx(), sitemap()],
 });
