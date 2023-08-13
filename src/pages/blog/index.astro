@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -22,7 +22,7 @@ const posts = (await getCollection("blog")).sort(
       }
       ul li {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
       }
       ul li :global(time) {
         flex: 0 0 130px;
@@ -35,6 +35,10 @@ const posts = (await getCollection("blog")).sort(
       .postUrl {
         margin-left: auto;
       }
+      .topic,
+      .postUrl {
+        font-family: monospace;
+      }
     </style>
   </head>
   <body>
@@ -45,11 +49,15 @@ const posts = (await getCollection("blog")).sort(
           {
             posts.map((post) => (
               <li>
-                <FormattedDate date={post.data.pubDate} /> |
-                {post.slug.split("/")[0]} |
-                <a class="postUrl" href={`/blog/${post.slug}/`}>
-                  {post.data.title}
-                </a>
+                <div>
+                  <span class="topic">
+                    {post.slug.split("/")[0].padEnd(7, "_")}
+                  </span>
+                  <a class="postUrl" href={`/blog/${post.slug}/`}>
+                    {post.data.title}
+                  </a>
+                </div>
+                <FormattedDate date={post.data.pubDate} />
               </li>
             ))
           }
